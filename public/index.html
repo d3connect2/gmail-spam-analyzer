@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Spam Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gmail Spam Analyzer</h1>
+      <p class="subtitle">Read unread spam, extract Return-Path & PTR domains, then mark as read</p>
+    </header>
+
+    <section class="credentials">
+      <h2>Gmail credentials</h2>
+      <form id="form" class="form">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@gmail.com" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="appPassword">App password</label>
+          <input type="password" id="appPassword" name="appPassword" placeholder="16-character app password" required autocomplete="off">
+          <small>Use a <a href="https://support.google.com/accounts/answer/185833" target="_blank" rel="noopener">Gmail App Password</a>, not your normal password.</small>
+        </div>
+        <button type="submit" id="submitBtn" class="btn">Fetch unread spam</button>
+      </form>
+    </section>
+
+    <section class="status" id="status" aria-live="polite"></section>
+
+    <section class="results" id="resultsSection" hidden>
+      <h2>Unread spam results</h2>
+      <p class="count" id="count"></p>
+      <button type="button" id="copyAllBtn" class="btn btn-small">Copy all unique main domains</button>
+      <div class="table-wrap">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Subject</th>
+              <th>From</th>
+              <th>Date</th>
+              <th>Return-Path domain</th>
+              <th>PTR domain (Received)</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
