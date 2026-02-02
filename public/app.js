@@ -57,6 +57,7 @@
   var twoPartExtensions = {
     'uk.com': true, 'de.com': true, 'fr.com': true, 'it.com': true,
     'eu.com': true, 'us.com': true, 'no.com': true, 'gb.com': true,
+    'za.com': true, 'co.nl': true, 'com.de': true, 'biz.id': true, 'biz.ua': true,
     'co.uk': true, 'com.uk': true, 'org.uk': true, 'net.uk': true,
     'co.nz': true, 'co.za': true, 'co.jp': true, 'com.au': true,
     'net.au': true, 'org.au': true, 'com.br': true, 'co.in': true,
